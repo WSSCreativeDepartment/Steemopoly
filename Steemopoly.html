@@ -1,0 +1,1724 @@
+<html>   
+  
+  <!--Let's start with CSS design of the buttons that will be defined later-->
+
+  <style>
+    #playerA {    
+    position: absolute;
+    left: 140px;
+    top: 310px;
+      width: 130px;
+        height: 130px;
+     border-radius: 50%;
+      border-width: 3px;
+      border-color: blue;
+      background-color: #CCCCCC;     
+      color: blue;
+      font-size: 20px
+    }
+    #playerB {    
+    position: absolute;
+    left: 140px;
+    top: 310px;
+      width: 130px;
+        height: 130px;
+     border-radius: 50%;
+      border-width: 3px;
+      border-color: blue;
+      background-color: #CCCCCC;      
+      color: blue;
+      font-size: 20px
+    }
+    #playerC {    
+    position: absolute;
+    left: 140px;
+    top: 310px;
+      width: 130px;
+        height: 130px;
+     border-radius: 50%;
+      border-width: 3px;
+      border-color: blue;
+      background-color: #CCCCCC;      
+      color: blue;
+      font-size: 20px
+    }
+    #playerD {    
+    position: absolute;
+    left: 140px;
+    top: 310px;
+      width: 130px;
+        height: 130px;
+     border-radius: 50%;
+      border-width: 3px;
+      border-color: blue;
+      background-color: #CCCCCC;      
+      color: blue;
+      font-size: 20px
+    }
+    #playerE {    
+    position: absolute;
+    left: 140px;
+    top: 310px;
+      width: 130px;
+        height: 130px;
+     border-radius: 50%;
+      border-width: 3px;
+      border-color: blue;
+      background-color: #CCCCCC;     
+      color: blue;
+      font-size: 20px
+    }
+    #playerF {    
+    position: absolute;
+    left: 140px;
+    top: 310px;
+      width: 130px;
+        height: 130px;
+     border-radius: 50%;
+      border-width: 3px;
+      border-color: blue;
+      background-color: #CCCCCC;     
+      color: blue;
+      font-size: 20px
+    }    
+     #startA {
+    
+    position: absolute;
+    left: 340px;
+    top: 310px;
+      width: 130px;
+        height: 130px;
+     border-radius: 50%;
+      border-width: 3px;
+      border-color: blue;
+      background-color: #CCCCCC;     
+      color: blue;
+      font-size: 20px
+    }
+     #PUSH {    
+    position: absolute;
+    left: 340px;
+    top: 310px;
+      width: 130px;
+        height: 130px;
+     border-radius: 50%;
+      border-width: 3px;
+      border-color: blue;
+      background-color: #CCCCCC;    
+      color: blue;
+      font-size: 20px
+    } 
+    #buy {
+    position: absolute;
+    left: 340px;
+    top: 310px;
+      width: 130px;
+        height: 130px;
+     border-radius: 50%;
+      border-width: 3px;
+      border-color: blue;
+      background-color: #CCCCCC;      
+      color: blue;
+      font-size: 20px
+    }    
+    #invest {    
+    position: absolute;
+    left: 340px;
+    top: 310px;
+      width: 130px;
+        height: 130px;
+     border-radius: 50%;
+      border-width: 3px;
+      border-color: blue;
+      background-color: #CCCCCC;      
+      color: blue;
+      font-size: 20px
+    }    
+    #next {    
+    position: absolute;
+    left: 540px;
+    top: 310px;
+      width: 130px;
+        height: 130px;
+     border-radius: 50%;
+      border-width: 3px;
+      border-color: blue;
+      background-color: #CCCCCC;      
+      color: blue;
+      font-size: 20px
+    } 
+      <!--Down is sg drawing of the play board, pawns and text labels that appear on the board. Each field on the board is defined by its size, color, position, and ID-->
+
+    svg {
+     font-family: "Verdana"        
+    }   
+    </style>  
+   <svg height="820" width="820">       
+  <rect id = "Start" x="2" y="2" width="100" height="100" stroke="black" stroke-width="2" fill="#FFFF99" />    
+  <rect id = "Spam Post 1" x="104" y="2" width="66" height="100" stroke="black" stroke-width="2" fill="#FFEE99" />    
+  <rect id = "Airdrop 1" x="172" y="2" width="66" height="100" stroke="black" stroke-width="2" fill="#66FFDD" />   
+  <rect id = "Spam Post 2" x="240" y="2" width="66" height="100" stroke="black" stroke-width="2" fill="#FFEE99" />    
+  <rect id = "Fee 1" x="308" y="2" width="66" height="100" stroke="black" stroke-width="2" fill="red" />   
+  <rect id = "Ico 1" x="376" y="2" width="66" height="100" stroke="black" stroke-width="2" fill="#CCCCCC" />  
+  <rect id = "Shit Post 1" x="444" y="2" width="66" height="100" stroke="black" stroke-width="2" fill="#FFAA88"/>
+  <rect id = "Shit Post 2" x="512" y="2" width="66" height="100" stroke="black" stroke-width="2" fill="#FFAA88"/>   
+  <rect id = "Day Trade 1" x="580" y="2" width="66" height="100" stroke="black" stroke-width="2" fill="#CCCCFF" />   
+  <rect id = "Shit Post 3" x="648" y="2" width="66" height="100" stroke="black" stroke-width="2" fill="#FFAA88" />
+  <rect id = "Warning" x="716" y="2" width="100" height="100" stroke="black" stroke-width="2" fill="linen" /> 
+  <rect id = "Meme Post 1" x="716" y="104" width="100" height="66" stroke="black" stroke-width="2" fill="#33FF99" />  
+  <rect id = "Meme Post 2" x="716" y="172" width="100" height="66" stroke="black" stroke-width="2" fill="#33FF99" />
+  <rect id = "Fee 2" x="716" y="240" width="100" height="66" stroke="black" stroke-width="2" fill="red" />
+  <rect id = "Meme Post 3" x="716" y="308" width="100" height="66" stroke="black" stroke-width="2" fill="#33FF99" />   
+  <rect id = "Ico 2" x="716" y="376" width="100" height="66" stroke="black" stroke-width="2" fill="#CCCCCC" />    
+  <rect id = "Photography Post 1" x="716" y="444" width="100" height="66" stroke="black" stroke-width="2" fill="#66AA99" />
+  <rect id = "Photography Post 2" x="716" y="512" width="100" height="66" stroke="black" stroke-width="2" fill="#66AA99" />
+  <rect id = "Day Trade 2" x="716" y="580" width="100" height="66" stroke="black" stroke-width="2" fill="#CCCCFF" />
+  <rect id = "Photography Post 3" x="716" y="648" width="100" height="66" stroke="black" stroke-width="2" fill="#66AA99" />
+  <rect id = "Nap Time" x="716" y="716" width="100" height="100" stroke="black" stroke-width="2" fill="linen" />
+  <rect id = "Chart Post 1" x="648" y="716" width="66" height="100" stroke="black" stroke-width="2" fill="#667777" />
+  <rect id = "Airdrop 2" x="580" y="716" width="66" height="100" stroke="black" stroke-width="2" fill="#66FFDD" />
+  <rect id = "Chart Post 2" x="512" y="716" width="66" height="100" stroke="black" stroke-width="2" fill="#667777" />
+  <rect id = "Chart Post 3" x="444" y="716" width="66" height="100" stroke="black" stroke-width="2" fill="#667777" />
+  <rect id = "Ico 3" x="376" y="716" width="66" height="100" stroke="black" stroke-width="2" fill="#CCCCCC" />
+  <rect id = "Life Post 1" x="308" y="716" width="66" height="100" stroke="black" stroke-width="2" fill="#337799" />
+  <rect id = "Fee 3" x="240" y="716" width="66" height="100" stroke="black" stroke-width="2" fill="red" />
+  <rect id = "Life Post 2" x="172" y="716" width="66" height="100" stroke="black" stroke-width="2" fill="#337799" />
+  <rect id = "Life Post 3" x="104" y="716" width="66" height="100" stroke="black" stroke-width="2" fill="#337799" /> 
+  <rect id = "Banned!" x="2" y="716" width="100" height="100" stroke="black" stroke-width="2" fill="linen" />
+  <rect id = "Steem Post 1" x="2" y="648" width="100" height="66" stroke="black" stroke-width="2" fill="#3322AA" />
+  <rect id = "Day Trade 3" x="2" y="580" width="100" height="66" stroke="black" stroke-width="2" fill="#CCCCFF" />
+  <rect id = "Steem Post 2" x="2" y="512" width="100" height="66" stroke="black" stroke-width="2" fill="#3322AA" />
+  <rect id = "Steem Post 3" x="2" y="444" width="100" height="66" stroke="black" stroke-width="2" fill="#3322AA" />
+  <rect id = "Ico 4" x="2" y="376" width="100" height="66" stroke="black" stroke-width="2" fill="#CCCCCC" /> 
+  <rect id = "Airdrop 3" x="2" y="308" width="100" height="66" stroke="black" stroke-width="2" fill="#66FFDD" />
+  <rect id = "Dev Post 1" x="2" y="240" width="100" height="66" stroke="black" stroke-width="2" fill="#330077" />
+  <rect id = "Fee 4" x="2" y="172" width="100" height="66" stroke="black" stroke-width="2" fill="red" />
+  <rect id = "Dev Post 2" x="2" y="104" width="100" height="66" stroke="black" stroke-width="2" fill="#330077" />
+     
+       <!--Text labels with font size, position and ID as identifyer -->
+       <!--The most of the game messages will appear in these text labels-->
+
+
+     
+     <text id = "num" x = "300" y = "135" font-size="25" ></text>
+     <text id = "now" x = "340" y = "180" font-size="25" ></text>
+     <text id = "field" x = "340" y = "235" font-size="35" ></text>
+     <text id = "price" x = "105" y = "275" font-size="12" ></text>     
+     <text id = "walletA" x = "125" y = "475" font-size="16" ></text>
+     <text id = "walletB" x = "125" y = "500" font-size="16" ></text>
+     <text id = "walletC" x = "125" y = "525" font-size="16" ></text>
+     <text id = "walletD" x = "125" y = "550" font-size="16" ></text>
+     <text id = "walletE" x = "125" y = "575" font-size="16" ></text>
+     <text id = "walletF" x = "125" y = "600" font-size="16" ></text>
+     
+     <text id = "bank" x = "125" y = "650" font-size="20" ></text>
+     
+       <!--PAWNS are circles defined by color and ID-->
+
+     
+     <circle id = "circle0" cx="52" cy="52" r="15" stroke="grey" stroke-width="2" fill="white" />
+     <circle id = "circle1" cx="52" cy="52" r="15" stroke="grey" stroke-width="2" fill="black" />
+     <circle id = "circle2" cx="52" cy="52" r="15" stroke="grey" stroke-width="2" fill="purple" />
+     <circle id = "circle3" cx="52" cy="52" r="15" stroke="grey" stroke-width="2" fill="yellow" />
+     <circle id = "circle4" cx="52" cy="52" r="15" stroke="grey" stroke-width="2" fill="pink" />
+     <circle id = "circle5" cx="52" cy="52" r="15" stroke="grey" stroke-width="2" fill="cyan" />  
+  </svg>
+  
+    <!--Setting the HTML of the butttons that I already defined them in CSS. All these buttons are not visible at the same time, that is defined late in teh code in Javascript-->
+
+  
+  <button id = "playerA">PLAYER A HERE!</button>
+  <button id = "playerB">PLAYER B HERE!</button>
+  <button id = "playerC">PLAYER C HERE!</button>
+  <button id = "playerD">PLAYER D HERE!</button>
+  <button id = "playerE">PLAYER E HERE!</button>
+  <button id = "playerF">PLAYER F HERE!</button>
+  
+  <button id = "startA">START</button>
+  <br/>
+  <br/>
+  <button id = "PUSH">ROLL!!!!</button>
+  <br/>
+  <button id = "invest">INVEST</button>
+  <button id = "next">NEXT</button>  
+  <button id = "buy">DO IT!!!</button>  
+  
+    <!--Down are the text labels that are not on the game board and they are there for selling Steemopoly properties-->
+
+  
+  <label id = "pr1"></label>
+  <button id = "startB1">SELL</button>  
+  <br/>  
+  <label id = "pr2"></label>
+  <button id = "startB2">SELL</button>  
+  <br/>
+  <label id = "pr3"></label>
+  <button id = "startB3">SELL</button>  
+  <br/>
+  <label id = "pr4"></label>
+  <button id = "startB4">SELL</button>
+  <br/> 
+  <label id = "pr5"></label>
+  <button id = "startB5">SELL</button>
+  <br/>
+  <label id = "pr6"></label>
+  <button id = "startB6">SELL</button>
+  <br/>
+  <label id = "pr7"></label>
+  <button id = "startB7">SELL</button>  
+  <br/>
+  <label id = "pr8"></label>
+  <button id = "startB8">SELL</button>  
+  <br/>
+  <label id = "pr9"></label>
+  <button id = "startB9">SELL</button>
+  <br/>
+  <label id = "pr10"></label>
+  <button id = "startB10">SELL</button>
+  <br/>
+  <label id = "pr11"></label>
+  <button id = "startB11">SELL</button>
+  <br/>
+  <label id = "pr12"></label>
+  <button id = "startB12">SELL</button>
+  <br/>
+  <label id = "pr13"></label>
+  <button id = "startB13">SELL</button>
+  <br/>
+  <label id = "pr14"></label>
+  <button id = "startB14">SELL</button> 
+  <br/>
+  <label id = "pr15"></label>
+  <button id = "startB15">SELL</button>  
+  <br/>
+  <label id = "pr16"></label>
+  <button id = "startB16">SELL</button>     
+  <br/>
+  <label id = "pr17"></label>
+  <button id = "startB17">SELL</button>  
+  <br/>
+  <label id = "pr18"></label>
+  <button id = "startB18">SELL</button>  
+  <br/>
+  <label id = "pr19"></label>
+  <button id = "startB19">SELL</button> 
+  <br/>
+  <label id = "pr20"></label>
+  <button id = "startB20">SELL</button>
+  <br/>
+  <label id = "pr21"></label>
+  <button id = "startB21">SELL</button>
+  <br/>  
+  <label id = "pr22"></label>
+  <button id = "startB22">SELL</button>  
+  <br/>
+  <br/>  
+    <script>      
+      
+      
+      // Now let's do some Javascript
+      // First I defined var players as an empty array, the game is for two to six players, so only active players are in the array
+      var players = [];
+      
+      
+      // I numerized vars for each player. I did it to simplify identifying and selling?buying game fields. 
+      
+      var PlayerA = 11;
+      var PlayerB = 12;
+      var PlayerC = 13;
+      var PlayerD = 14;
+      var PlayerE = 15;
+      var PlayerF = 16;
+      
+      // Fetching buttns set in HTML
+           
+      var buttonA = document.getElementById("playerA");
+      var buttonB = document.getElementById("playerB");
+      var buttonC = document.getElementById("playerC");
+      var buttonD = document.getElementById("playerD");
+      var buttonE = document.getElementById("playerE");
+      var buttonF = document.getElementById("playerF");
+      
+      var startButton = document.getElementById("startA");
+      
+      var investButton = document.getElementById("invest");
+      
+      var nextButton = document.getElementById("next");
+      
+      var buyButton = document.getElementById("buy");
+      
+      // Let's hide the buttons that we don't want to see at the beginning
+    
+      buttonB.style.visibility = "hidden";
+      buttonC.style.visibility = "hidden";
+      buttonD.style.visibility = "hidden";
+      buttonE.style.visibility = "hidden";
+      buttonF.style.visibility = "hidden";
+      investButton.style.visibility = "hidden";
+      nextButton.style.visibility = "hidden";
+      buyButton.style.visibility = "hidden";
+      startButton.style.visibility = "hidden";
+      
+      // testBTN is what I started with, that's why I called it test button. Also hidden. 
+      
+      var testBTN = document.getElementById("PUSH");
+      testBTN.style.visibility = "hidden";
+      
+      // All those buttons for selling properties when you get bankrupted... also hidden
+      
+      var sell1 = document.getElementById("startB1");
+      var sell2 = document.getElementById("startB2");
+      var sell3 = document.getElementById("startB3");
+      var sell4 = document.getElementById("startB4");
+      var sell5 = document.getElementById("startB5");
+      var sell6 = document.getElementById("startB6");
+      var sell7 = document.getElementById("startB7");
+      var sell8 = document.getElementById("startB8");
+      var sell9 = document.getElementById("startB9");
+      var sell10 = document.getElementById("startB10");
+      var sell11 = document.getElementById("startB11");
+      var sell12 = document.getElementById("startB12");
+      var sell13 = document.getElementById("startB13");
+      var sell14 = document.getElementById("startB14");
+      var sell15 = document.getElementById("startB15");
+      var sell16 = document.getElementById("startB16");
+      var sell17 = document.getElementById("startB17");
+      var sell18 = document.getElementById("startB18");
+      var sell19 = document.getElementById("startB19");
+      var sell20 = document.getElementById("startB20");
+      var sell21 = document.getElementById("startB21");
+      var sell22 = document.getElementById("startB22");
+      
+      sell1.style.visibility = "hidden";    
+      sell2.style.visibility = "hidden";
+      sell3.style.visibility = "hidden";
+      sell4.style.visibility = "hidden";
+      sell5.style.visibility = "hidden";
+      sell6.style.visibility = "hidden";
+      sell7.style.visibility = "hidden";
+      sell8.style.visibility = "hidden";
+      sell9.style.visibility = "hidden";
+      sell10.style.visibility = "hidden";
+      sell11.style.visibility = "hidden";
+      sell12.style.visibility = "hidden";
+      sell13.style.visibility = "hidden";
+      sell14.style.visibility = "hidden";
+      sell15.style.visibility = "hidden";
+      sell16.style.visibility = "hidden";
+      sell17.style.visibility = "hidden";
+      sell18.style.visibility = "hidden";
+      sell19.style.visibility = "hidden";
+      sell20.style.visibility = "hidden";
+      sell21.style.visibility = "hidden";
+      sell22.style.visibility = "hidden";
+      
+      
+      // To prevent writing function for the each field, I organized the 'properties on sale' as an array
+            
+      var sells = ["0", sell1, "0", sell2, "0", "0", sell3, sell4, "0", sell5, "0", sell6, sell7, "0", sell8, "0", sell9, sell10, "0", sell11, "0", sell12, "0", sell13, sell14, "0", sell15, "0", sell16, sell17, "0", sell18, "0", sell19, sell20, "0", "0", sell21, "0", sell22];
+      
+      // Also did that with the label for each field
+            
+      var labs = ["0", "pr1", "0", "pr2", "0", "0", "pr3", "pr4", "0", "pr5", "0", "pr6", "pr7", "0", "pr8", "0", "pr9", "pr10", "0", "pr11", "0", "pr12", "0", "pr13", "pr14", "0", "pr15", "0", "pr16", "pr17", "0", "pr18", "0", "pr19", "pr20", "0", "0", "pr21", "0", "pr22"];
+      
+      // These are the counters, starting with zero, defined later in the code
+      
+      var i = 0;
+      var j = 0;
+      
+      var s;
+      
+      // Array for the game type
+      
+      var finalPlayers = ["Two Player Game", "Three Player Game", "Four Player Game", "Five Player Game", "Six Player Game"]
+      
+      // Cunters for each player and an empty array where I will 'push' only the counters of active players
+      
+      var counter = [];
+      var counterA = 0;
+      var counterB = 0;
+      var counterC = 0;
+      var counterD = 0;
+      var counterE = 0;
+      var counterF = 0;
+      
+      // BothDices is a lucky number between 2 and 12
+      
+      var bothDices = 0;
+      
+      // Array of all named fields on the board
+      
+      var positions = ['Start', 'Spam Post 1', 'Airdrop 1', 'Spam Post 2', 'Fee 1', 'Ico 1', 'Shit Post 1', 'Shit Post 2', 'Day Trade 1', 'Shit Post 3', 'Warning', 'Meme Post 1', 'Meme Post 2', 'Fee 2', 'Meme Post 3', 'Ico 2', 'Photography Post 1', 'Photography Post 2', 'Day Trade 2', 'Photography Post 3', 'Nap Time', 'Chart Post 1', 'Airdrop 2', 'Chart Post 2', 'Chart Post 3', 'Ico 3', 'Life Post 1', 'Fee 3', 'Life Post 2', 'Life Post 3', 'Banned!', 'Steem Post 1', 'Day Trade 3', 'Steem Post 2', 'Steem Post 3', 'Ico 4', 'Airdrop 3', 'Dev Post 1', 'Fee 4', 'Dev Post 2']
+      
+      
+      // When the bank holds the properties, their identifyer are defined in an array below
+      
+      var ownership = [201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239, 240];
+      
+      // 'upvotes' are what the whole game is about, it is fferent from field to field 
+      
+      var upvote = [6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19 ,20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 48]; 
+      
+      // Selling price is twice lower than buying proce
+      
+      var sellingPrice = [32, 34, 36, 38, 40, 42, 44, 46, 48, 50, 52, 54, 56, 58, 60, 62, 64, 66, 68, 70, 72, 74, 76, 78, 80, 82, 84, 86, 88, 90, 92, 94, 96, 98, 100, 102, 104, 106, 108, 110, 112];
+      
+      // The center point for the start of the each pawn
+          
+      var centx = 52;
+      var centy = 52;
+      
+      // Price is defined later
+            
+      var price = 0;
+      var offer = "";
+      
+      
+      // Each player starts with 1500 Steemopoly Money
+      
+      var wallets = [];
+      var walletA = 1500;
+      var walletB = 1500;
+      var walletC = 1500;
+      var walletD = 1500;
+      var walletE = 1500;
+      var walletF = 1500;
+      
+      
+      // Colors of the pawns
+      
+      fills = ["white", "black", "purple", "yellow", "pink", "cyan"]
+      
+      // Bankmoney is at the beginning zero, actually it depends on the number of players
+      
+      var bankmoney = 0;
+      
+      
+      // Variables that will be explained later
+      
+      var airdrops = [30, 60, 90, 120, 150, 180];
+      var announcement1 = "A brand new token airdrop: +";
+      var announcement2 = "This is how good you are as a day trader: ";
+      var announcement3 = ["Electricity bill: ", "Transaction fees: ", "Gambling loss: ", "You got flagged: ", "Charity: ", "Internet bill: ", "Blackmailed: "];
+      var fees = [-100, -125, -150, -175, -200, -225];
+      
+      var icos = [21, 22, 23, 24];
+      var icc = [21, 22, 23, 24];
+      
+      var n = -1;
+      
+      
+      // Connecting cicles on the board with the code of the pawns
+            
+      var pawn0 = document.getElementById("circle0");
+      var pawn1 = document.getElementById("circle1");
+      var pawn2 = document.getElementById("circle2");
+      var pawn3 = document.getElementById("circle3");
+      var pawn4 = document.getElementById("circle4");
+      var pawn5 = document.getElementById("circle5");
+      
+      // Pawns are hidden untill there is no players
+      
+      pawn0.style.visibility = "hidden";
+      pawn1.style.visibility = "hidden";
+      pawn2.style.visibility = "hidden";
+      pawn3.style.visibility = "hidden";
+      pawn4.style.visibility = "hidden";
+      pawn5.style.visibility = "hidden";
+      
+      var pawns = []; 
+      
+      // Whose turn???
+      
+      var nowPlayers = ["Player A", "Player B", "Player C", "Player D", "Player E", "Player F"];
+      
+      // Now let's make some functions
+         
+      function onePlayer() {
+        // The function for the player 1 when he apply himself to play the game. 
+        // This function makes button for player 2 to apply visible
+        // Pushing PLAYER A into players array
+       players.push(PlayerA);
+        // Pushing counter A to counter array
+       counter.push(counterA); 
+        // pushing wallet A to wallets array
+       wallets.push(walletA);
+        
+        //Defining a pawn that belongs o player A and making the same pawn visible
+       pawns.push(pawn0);
+              pawn0.style.visibility = "visible";
+        
+        // Hiding the button for player A nad showing for player B
+
+       buttonB.style.visibility = "visible"; 
+       buttonA.style.visibility = "hidden";
+        
+        
+      }
+      // The next five functions are the same as the last one, only for players B,C,D,E and F
+      function twoPlayers() {
+       players.push(PlayerB); 
+       counter.push(counterB); 
+       wallets.push(walletB);
+               pawns.push(pawn1);
+              pawn1.style.visibility = "visible";
+                    startButton.style.visibility = "visible";
+
+       buttonC.style.visibility = "visible";
+       buttonB.style.visibility = "hidden";
+      }
+      function threePlayers() {
+       players.push(PlayerC); 
+       counter.push(counterC); 
+       wallets.push(walletC);
+               pawns.push(pawn2);
+              pawn2.style.visibility = "visible";
+
+       buttonD.style.visibility = "visible";
+       buttonC.style.visibility = "hidden";
+      }
+      function fourPlayers() {
+       players.push(PlayerD);        
+       counter.push(counterD); 
+       wallets.push(walletD);
+               pawns.push(pawn3);
+              pawn3.style.visibility = "visible";
+
+       buttonE.style.visibility = "visible";
+       buttonD.style.visibility = "hidden";
+      }
+      function fivePlayers() {
+       players.push(PlayerE); 
+       counter.push(counterE); 
+       wallets.push(walletE);
+               pawns.push(pawn4);
+              pawn4.style.visibility = "visible";
+
+
+       buttonF.style.visibility = "visible";
+       buttonE.style.visibility = "hidden";
+      }
+      function sixPlayers() {
+       players.push(PlayerF);
+       counter.push(counterF); 
+       wallets.push(walletF);
+               pawns.push(pawn5);
+              pawn5.style.visibility = "visible";
+
+       hideButtons();
+      }      
+      
+      
+      // Start button function
+      function start() {
+        
+        // Managing the visibility of teh buttons depending on the numbers of applied players
+         if (buttonC.style.visibility === "visible" && buttonD.style.visibility === "hidden") {
+          j = 0;
+        } else if (buttonD.style.visibility === "visible" && buttonE.style.visibility === "hidden") {
+          j = 1;
+        } else if (buttonE.style.visibility === "visible" && buttonF.style.visibility === "hidden") {
+          j = 2;
+        } else if (buttonF.style.visibility === "visible") {
+          j = 3;
+        } else if (buttonA.style.visibility === "hidden") {
+          j = 4;
+        }
+         
+        
+        // Defining "j" counter for teh array that places the type of game in the etxt field
+         document.getElementById("num").innerHTML = finalPlayers[j];
+        hideButtons();
+        
+        
+        // Bank starts with teh same amount of Steemopoly Money as teh all players together
+        bankmoney = players.length * 1500;
+        
+        // Hiding the start button when clicked
+        startButton.style.visibility = 'hidden';
+        
+        // Showing the testBTN (ROLL button)
+              testBTN.style.visibility = "visible";
+        walletRefresh()
+        
+        // Whose turn is?
+        nowPlaying();
+    
+      }
+      
+      function hideButtons() {
+        // Simple function for hiding players buttons when the game starts
+      buttonA.style.visibility = "hidden";
+      buttonB.style.visibility = "hidden";
+      buttonC.style.visibility = "hidden";
+      buttonD.style.visibility = "hidden";
+      buttonE.style.visibility = "hidden";
+      buttonF.style.visibility = "hidden";
+      }
+      
+      function i_correction() {
+        // i is defned for each player (i = 0 for player A, i = 1 for player B...) and it correct itself in a loop
+       
+        if (i > (players.length - 1)) {
+         i = i - players.length; 
+        }
+      }
+      
+      function plTurn() {
+        
+        // Whose turn is
+        // Just calling the functions that will be explained later. But this is a button function that rolls the dices for players
+
+        i_correction();
+        counting();
+       
+        walletRefresh()
+        movement()
+        
+        selling()
+        
+        
+      }
+      
+      function dices() {
+        
+        // Function for picking two random numbers between 1 and six to get a number between 2 and 12
+        
+       let dice1 = Math.floor(Math.random() * 6) + 1;
+       let dice2 = Math.floor(Math.random() * 6) + 1; 
+        
+       bothDices = dice1 + dice2
+      }
+      
+      function counting() {        
+        // This is one of the most important functions in the game. It is a simple call of other functions but all happend here
+        
+        // Calling the dices function
+        dices();
+        
+        // Loser function - defined later
+        loser();
+        
+        // A counter for 'i' - player adds the number that we got in 'dices' and defined a new position of your pawn
+        counter[i] = counter[i] + bothDices;
+        
+        // The board has 40 fields so we have to make a correction if player passed the start field
+        if (counter[i] > 39) {
+         counter[i] = counter[i] - 40; 
+        }
+        
+        // Calling the name of the field and placing it to a text label on board
+        let spot = counter[i]
+        properties()
+       
+        
+        document.getElementById("field").innerHTML = positions[spot];
+        
+        // Call of later defined functions
+        airDropping();
+        dayTrading();
+        penalties();
+        icoFields();
+        taxOffice();
+        walletRefresh()
+        
+      }
+      
+      function airDropping() {
+        
+        // This function checks if the player "i" stepped on the airdrop field
+        if (counter[i] === 2 || counter[i] === 22 || counter[i] === 36) {
+          
+          // Defining a random number from 0 to 5
+          // The result number gets an element from airdrops array defined up in HTML section of the code
+          // Rewarding the player with random amount of Steemopoly MONEY from the bank
+        let airLuck = Math.floor(Math.random() * 5) + 0;
+        wallets[i] = wallets[i] + airdrops[airLuck];
+        console.log(wallets[i]);
+        document.getElementById("price").innerHTML = announcement1 + airdrops[airLuck];
+        bankmoney = bankmoney - airdrops[airLuck];
+        
+        }
+        // Showing "next button" to switch the players and testBTN becomes hidden
+         nextButton.style.visibility = "visible";
+              testBTN.style.visibility = "hidden";
+        walletRefresh()
+      }
+      
+      function dayTrading() {
+        // This function checks if the player "i" stepped on the 'Day Trade' field
+        if (counter[i] === 8 || counter[i] === 18 || counter[i] === 32){
+          // The amount of rewards/penalties is a totally random amount betwnn -100 and 350
+          let dayLuck = Math.floor(Math.random() * 450) - 100;
+          
+          // Rewardsing the user for that amount from bank
+          wallets[i] = wallets[i] + dayLuck;
+          console.log(wallets[i]);
+          document.getElementById("price").innerHTML = announcement2 + dayLuck;
+          bankmoney = bankmoney - dayLuck;
+         
+        }
+                // Showing "next button" to switch the players and testBTN becomes hidden
+
+         nextButton.style.visibility = "visible";
+              testBTN.style.visibility = "hidden";
+        walletRefresh()
+      }
+      
+      function penalties() {
+                // This function checks if the player "i" stepped on the 'penalty' field
+
+        if (counter[i] === 4 || counter[i] === 13 || counter[i] === 27 || counter[i] === 38) {
+          
+          
+          let p = Math.floor(Math.random() * 6) + 0;
+          let q = Math.floor(Math.random() * 5) + 0;
+          
+          // Punishing user's wallets for the benefits of the bank
+          wallets[i] = wallets[i] + fees[q];
+          document.getElementById("price").innerHTML = announcement3[p] + fees[q];
+          bankmoney = bankmoney - fees[q];
+          console.log(bankmoney);
+
+          
+        }                // Showing "next button" to switch the players and testBTN becomes hidden
+
+         nextButton.style.visibility = "visible";
+              testBTN.style.visibility = "hidden";
+        walletRefresh()
+        
+      }
+      
+      function icoFields() {        
+        
+        // Ico fields are 5, 15, 25, and 35, defined using n - variable
+           n = (counter[i]-5)/10
+           
+           // Defining the price of each of ico investments
+           // counter[i] a number of a field where i-pawn just came
+           price = 50 + counter[i]*2;
+        
+        // If a player came in an ICO field and nobody else holds the tokens...
+        if (n === 0 || n === 1 || n === 2 || n ===3) {
+        if (icos[n] != 11 && icos[n] != 12 && icos[n] != 13 && icos[n] != 14 && icos[n] != 15 && icos[n] != 16) {
+          //... then you can invest in ICO          
+              document.getElementById("price").innerHTML = "Invest in ICO? " + price;
+              investButton.style.visibility = "visible";
+              nextButton.style.visibility = "visible";
+              testBTN.style.visibility = "hidden";
+              } 
+          // But if you already holding the tokens from that ICO, you get a triple amount when you step on that field again. 
+          else if (icos[n] === players[i]) {
+            document.getElementById("price").innerHTML = "Your investment payed off: " + price*3;
+            
+            // Then you don't hold those tokens anymore and someone else can invest in ico
+            icos[n] = icc[n];
+            wallets[i] = wallets[i] + price*3;
+            bankmoney = bankmoney - price*3;
+
+          }
+          else 
+              {
+              investButton.style.visibility = "hidden";
+              nextButton.style.visibility = "visible";
+              testBTN.style.visibility = "hidden"; 
+              }
+        
+        }
+        walletRefresh()
+
+        
+      }
+      
+      function icoInvest() {
+        
+        // This is a tigger function to press a button in invest in actual ICO (in game)
+        // the ICO ownership ID number, defined in the array up in this page becomes equal to players ID numbr, also defined before as variables
+        icos[n] = players[i]
+        wallets[i] = wallets[i] - price;
+        bankmoney = bankmoney + price;
+        investButton.style.visibility = "hidden";
+              nextButton.style.visibility = "visible";
+              testBTN.style.visibility = "hidden"; 
+        walletRefresh()
+     
+          
+      }
+      
+      function icoNext() {
+        
+        // This started as a 'NEXT' function only for ICO, but I managed to use it in every move in the game, so the name of the function stayed
+        // Next, invest and buy button become hidden if it was visible 
+        investButton.style.visibility = "hidden";
+        buyButton.style.visibility = "hidden";
+              nextButton.style.visibility = "hidden";
+        
+        // Roll dice button for the next player becomes visible
+              testBTN.style.visibility = "visible";
+                    document.getElementById("price").innerHTML = "";
+        
+        // I is up for 1 - that means that now the next player is to play, his wallet(wallets[i]), will be used in this turn, counter[i]; pawn[i]  and player[i] vars change from payer A to player B (for example)
+
+        i = i + 1;
+        
+        nowPlaying();
+     walletRefresh()
+     refreshSelling()
+     
+    
+     
+    
+      }
+      
+      function taxOffice() {
+        // This function checks if you stepped on the warning field or on the banned field. The first one is ust a warning, the secomd one costs you 300 Steemopoly Money
+        if (counter[i] === 10) {
+        document.getElementById("price").innerHTML = "Take it easy, the Tax office is behind your back";
+
+        }
+        if (counter[i] === 30) {
+          document.getElementById("price").innerHTML = "Tax office penalties: - 300 !!!";
+          wallets[i] = wallets[i] - 300;
+          bankmoney = bankmoney + 300;
+          counter[i] = 10;
+        }
+        
+        walletRefresh()
+      }
+      
+      function properties() {
+        
+        
+        // This is a function that defines POST-fields. There are 22 post fields on board divideg in 8 groups
+        
+        // Just to simplify things, I vill create a in-function var spot instead of wrting counter[i] each time
+        let spot = counter[i];
+        
+        // Each Post (in Monopoly - property) field has a different price that depends of the spot.
+        price = 60 + (spot*4);
+        
+        
+          if (spot != 0 && spot != 2 && spot != 4 && spot != 5 && spot != 8 && spot != 10 && spot != 13 && spot != 15 && spot != 18 && spot != 20 && spot != 22 && spot != 25 && spot != 27 && spot != 30 && spot != 32 && spot != 35 && spot != 36 && spot != 38) {
+            
+            
+                    // This is if statement that check if any of players owns the field (spot)
+
+          if (ownership[spot] != 11 && ownership[spot] !=12 && ownership[spot] !=13 && ownership[spot] !=14 && ownership[spot] !=15 && ownership[spot] !=16) 
+          
+          // If nobody owns the field, a player[i] can buy it (INVEST IN CREATION AND PROMOTION OF CONTENT in this game instead of BUY PROPERTY in Monopoly)
+          {
+            document.getElementById("price").innerHTML = "Create a " + positions[spot] + " and invest in the promotion: " + price;
+            buyButton.style.visibility = "visible";
+              nextButton.style.visibility = "visible";
+              testBTN.style.visibility = "hidden";
+           
+          }
+          
+            
+            // I mentioned before that 22 fields are divided in 8 groups. First and eigthth group hold two fields each, while the rest hold three fields each. 
+            
+            // Ownership array is  number that identifyes the owner of certain field. If a player[i] is the owner of the field, then ownership[pot] = player[i]
+            // If a player[i] holds a whole group, gets a much bigger upvote each time he steps on the fields inside that group
+        if (ownership[1] === ownership[3]) {
+         upvote[1] = 28;
+         upvote[3] = 36;
+        }
+        
+        if (ownership[6] === ownership[7] && ownership[6] === ownership[9]) {
+         upvote[6] = 48;
+         upvote[7] = 52;
+         upvote[9] = 60;
+        }
+        if (ownership[11] === ownership[12] && ownership[11] === ownership[14]) {
+         upvote[11] = 68;
+         upvote[12] = 72;
+         upvote[14] = 80;
+        }
+        
+        if (ownership[16] === ownership[17] && ownership[16] === ownership[19]) {
+         upvote[16] = 88;
+         upvote[17] = 92;
+         upvote[19] = 100;
+        }
+        
+        if (ownership[21] === ownership[23] && ownership[21] === ownership[24]) {
+         upvote[21] = 108;
+         upvote[23] = 116;
+         upvote[24] = 120;
+        }
+        
+        if (ownership[26] === ownership[28] && ownership[26] === ownership[29]) {
+         upvote[26] = 128;
+         upvote[28] = 136;
+         upvote[29] = 140;
+        }
+        
+        if (ownership[31] === ownership[33] && ownership[31] === ownership[34]) {
+         upvote[31] = 148;
+         upvote[33] = 156;
+         upvote[34] = 160;
+        }
+        if (ownership[37] === ownership[39]) {
+         upvote[37] = 172;
+         upvote[39] = 180;
+        }
+        
+        // PlayaOthers and PlayaSelf are defined down
+        
+        playaOthers();
+        playaSelf();
+            walletRefresh()
+      }
+      }
+      
+      function playaOthers() {
+        // If a player[i] stepped on a field that be;longs to another user
+        let spot = counter[i];
+       for ( 
+         // h is a number that is not i - presents the player that owns the field
+         let h =0; h < players.length; h++) {
+         
+         if (h != i) {
+        console.log(h) 
+        
+        // If you stepped on other player's field, your comment of that post was flagged and you have to pay. 2/3 of your penalties go to the owner and 1/3 to the bank 
+        // If the player holds the whole group, you will pay a lot more
+        if (players[h] === ownership[spot]) {
+          document.getElementById("price").innerHTML = "Your comment on this post got flagged and the author (2/3) and the bank  (1/3) got benefits!  -" + upvote[spot]*3;
+          
+          // 
+          console.log('trueowner' + players[h])
+          wallets[i] = wallets[i] - upvote[spot]*3;
+          wallets[h] = wallets[h] + upvote[spot]*2;	
+          bankmoney = bankmoney + upvote[spot];
+
+          
+          
+        }
+         
+        
+         }
+       }
+        walletRefresh()
+      }
+             
+      function playaSelf() {
+        // If you stepped on your own field, you get the upvote
+        // If you hold the whole group, you get much bigger upvote
+       let spot = counter[i];
+        if (ownership[spot] === players[i]) {
+          document.getElementById("price").innerHTML = "You got an upvote! " + (upvote[spot]+ 40);
+                    wallets[i] = wallets[i] + upvote[spot]*1 + 40;
+                              bankmoney = bankmoney - upvote[spot]*1 - 40;
+
+
+          
+        }
+        walletRefresh()
+      }
+      
+      function buying() {
+        // Very important function which makes a player the owner of a field
+        let spot = counter[i];
+        
+         // The ID number of the property becomes equal to the ID number of a player
+        ownership[spot] = players[i];
+        wallets[i] = wallets[i] - price;
+        bankmoney = bankmoney + price;
+        buyButton.style.visibility = "hidden";
+              nextButton.style.visibility = "visible";
+              testBTN.style.visibility = "hidden"; 
+        walletRefresh()
+        
+        
+        // Now let's colorize the purchased fields in the color of the player's pawn - avatar
+        let positionValue = positions[spot];
+        
+        
+        if (ownership[spot] === 11) {
+          document.getElementById(positionValue).setAttribute('fill','white');
+        }
+        if (ownership[spot] === 12) {
+          document.getElementById(positionValue).setAttribute('fill','black');
+        }
+        if (ownership[spot] === 13) {
+          document.getElementById(positionValue).setAttribute('fill','purple');
+        }
+        if (ownership[spot] === 14) {
+          document.getElementById(positionValue).setAttribute('fill','yellow');
+        }
+        if (ownership[spot] === 15) {
+          document.getElementById(positionValue).setAttribute('fill','pink');
+        }
+        if (ownership[spot] === 16) {
+          document.getElementById(positionValue).setAttribute('fill','cyan');
+        }
+      }
+      
+      function nowPlaying() {
+        
+        
+        // This function sends a message about what player is about to play
+        i_correction();
+        
+      
+        if (i === 0) {
+          document.getElementById("now").innerHTML = nowPlayers[0];
+        }
+       
+        if (i === 1) {
+          document.getElementById("now").innerHTML = nowPlayers[1];
+        }
+        if (i === 2) {
+          document.getElementById("now").innerHTML = nowPlayers[2];
+        }
+        if (i === 3) {
+          document.getElementById("now").innerHTML = nowPlayers[3];
+        }
+        if (i === 4) {
+          document.getElementById("now").innerHTML = nowPlayers[4];
+        }
+        if (i === 5) {
+          document.getElementById("now").innerHTML = nowPlayers[5];
+                  
+
+        }
+        walletRefresh()
+        
+      }
+      
+      function walletRefresh() {
+        
+        // Very important function that has to be called in every step of the game
+        // Provides always a fresh information about situation in the wallets of the players and about the bankmoney
+        // This information has to be available to all player to see
+        
+        
+        if (players.length > 1) {
+        document.getElementById("walletA").innerHTML = nowPlayers[0] + " Wallet: " + wallets[0];
+        document.getElementById("walletB").innerHTML = nowPlayers[1] + " Wallet: " + wallets[1];
+
+        }
+        
+        if (players.length > 2){
+        document.getElementById("walletC").innerHTML = nowPlayers[2] + " Wallet: " + wallets[2];
+        }
+        if (players.length > 3) {
+        document.getElementById("walletD").innerHTML = nowPlayers[3] + " Wallet: " + wallets[3];
+        }
+        if (players.length > 4) {
+        document.getElementById("walletE").innerHTML = nowPlayers[4] + " Wallet: " + wallets[4];
+        }
+        if (players.length > 5) {
+        document.getElementById("walletF").innerHTML = nowPlayers[5] + " Wallet: " + wallets[5];
+        }
+        document.getElementById("bank").innerHTML = "Bank Money: " + bankmoney;
+        
+        
+        // Let's get rid of the wallets that belong to the players that already got bankrupted and lost the game
+        
+        if (players.length < 3) {
+                  document.getElementById("walletC").innerHTML = "" 
+                  document.getElementById("walletD").innerHTML = ""
+                  document.getElementById("walletE").innerHTML = ""        
+                  document.getElementById("walletF").innerHTML = ""        
+        }
+        if (players.length < 4) {
+                  document.getElementById("walletD").innerHTML = ""
+                  document.getElementById("walletE").innerHTML = ""        
+                  document.getElementById("walletF").innerHTML = ""        
+        }
+        if (players.length < 5) {
+                  document.getElementById("walletE").innerHTML = ""        
+                  document.getElementById("walletF").innerHTML = ""        
+        }
+        if (players.length < 6) {
+                  document.getElementById("walletF").innerHTML = ""        
+        }
+        
+      }
+      
+      function movement() {
+        
+        // This function defines the coordinates inside svg drawing 
+        // The position of avatars is in the center of each field
+        
+        
+        let it = counter[i];
+        
+        if (it === 0){
+          centx = 52;
+          centy = 52;
+        }
+        if (it === 1) {
+          centx = 137;
+          centy = 52;
+        }  
+        if (it === 2) {
+          centx = 205;
+          centy = 52;
+        }  
+        if (it === 3) {
+          centx = 273;
+          centy = 52;
+        }  
+        if (it === 4) {
+          centx = 341;
+          centy = 52;
+        } 
+        if (it === 5) {
+          centx = 409;
+          centy = 52;
+        } 
+        if (it === 6) {
+          centx = 477;
+          centy = 52;
+        } 
+        if (it === 7) {
+          centx = 545;
+          centy = 52;
+        } 
+        if (it === 8) {
+          centx = 613;
+          centy = 52;
+        } 
+        if (it === 9) {
+          centx = 681;
+          centy = 52;
+        } 
+        if (it === 10) {
+          centx = 766;
+          centy = 52;
+        }
+        if (it === 11) {
+          centx = 766;
+          centy = 137;
+        }
+        if (it === 12) {
+          centx = 766;
+          centy = 205;
+        }
+        if (it === 13) {
+          centx = 766;
+          centy = 273;
+        }
+        if (it === 14) {
+          centx = 766;
+          centy = 341;
+        }
+        if (it === 15) {
+          centx = 766;
+          centy = 409;
+        }
+        if (it === 16) {
+          centx = 766;
+          centy = 477;
+        }
+        if (it === 17) {
+          centx = 766;
+          centy = 545;
+        }
+        if (it === 18) {
+          centx = 766;
+          centy = 613;
+        }
+        if (it === 19) {
+          centx = 766;
+          centy = 681;
+        }
+        if (it === 20) {
+          centx = 766;
+          centy = 766;
+        }
+        if (it === 21) {
+          centx = 681;
+          centy = 766;
+        }
+        if (it === 22) {
+          centx = 613;
+          centy = 766;
+        }
+        if (it === 23) {
+          centx = 545;
+          centy = 766;
+        }
+        if (it === 24) {
+          centx = 477;
+          centy = 766;
+        }
+        if (it === 25) {
+          centx = 409;
+          centy = 766;
+        }
+        if (it === 26) {
+          centx = 341;
+          centy = 766;
+        }
+        if (it === 27) {
+          centx = 273;
+          centy = 766;
+        }
+        if (it === 28) {
+          centx = 205;
+          centy = 766;
+        }
+        if (it === 29) {
+          centx = 137;
+          centy = 766;
+        }
+        if (it === 30) {
+          centx = 52;
+          centy = 766;
+        }
+        if (it === 31) {
+          centx = 52;
+          centy = 681;
+        }
+        if (it === 32) {
+          centx = 52;
+          centy = 613;
+        }
+        if (it === 33) {
+          centx = 52;
+          centy = 545;
+        }
+        if (it === 34) {
+          centx = 52;
+          centy = 477;
+        }
+        if (it === 35) {
+          centx = 52;
+          centy = 409;
+        }
+        if (it === 36) {
+          centx = 52;
+          centy = 341;
+        }
+        if (it === 37) {
+          centx = 52;
+          centy = 273;
+        }
+        if (it === 38) {
+          centx = 52;
+          centy = 205;
+        }
+        if (it === 39) {
+          centx = 52;
+          centy = 137;
+        }
+        
+        pawns[i].setAttribute("cx", centx);
+        pawns[i].setAttribute("cy", centy);
+
+        
+        
+      }
+      
+      function selling() {
+        // When a player 'i' is on the move, he can lost the game by losing all of his Steemopoly Money and the situation in his wallet is lower that zero. The player has one opportunity to sell his properties (or some of them) to the bank for the lower price and 
+        
+        for (let factor = 0; factor < ownership.length; factor++){
+          let owns = labs[factor];
+          
+          if (ownership[factor] === players[i]) {
+            document.getElementById(owns).innerHTML = positions[factor];
+            sells[factor].style.visibility = "visible";
+          } 
+           
+        }
+      }
+      
+      function refreshSelling() {
+        // 'selling table' is not on the svg drawing, it is below of it. After a player rolls the dices, this table belongs visible to him and he can sell some of his properties. When the player is done, the table becomes invisible again 
+        document.getElementById("pr1").innerHTML = "";
+        document.getElementById("pr2").innerHTML = "";
+        document.getElementById("pr3").innerHTML = "";
+        document.getElementById("pr4").innerHTML = "";
+        document.getElementById("pr5").innerHTML = "";
+        document.getElementById("pr6").innerHTML = "";
+        document.getElementById("pr7").innerHTML = "";
+        document.getElementById("pr8").innerHTML = "";
+        document.getElementById("pr9").innerHTML = "";
+        document.getElementById("pr10").innerHTML = "";
+        document.getElementById("pr11").innerHTML = "";
+        document.getElementById("pr12").innerHTML = "";
+        document.getElementById("pr13").innerHTML = "";
+        document.getElementById("pr14").innerHTML = "";
+        document.getElementById("pr15").innerHTML = "";
+        document.getElementById("pr16").innerHTML = "";
+        document.getElementById("pr17").innerHTML = "";
+        document.getElementById("pr18").innerHTML = "";
+        document.getElementById("pr19").innerHTML = "";
+        document.getElementById("pr20").innerHTML = "";
+        document.getElementById("pr21").innerHTML = "";
+        document.getElementById("pr22").innerHTML = "";
+        sell1.style.visibility = "hidden";    
+      sell2.style.visibility = "hidden";
+      sell3.style.visibility = "hidden";
+      sell4.style.visibility = "hidden";
+      sell5.style.visibility = "hidden";
+      sell6.style.visibility = "hidden";
+      sell7.style.visibility = "hidden";
+      sell8.style.visibility = "hidden";
+      sell9.style.visibility = "hidden";
+      sell10.style.visibility = "hidden";
+      sell11.style.visibility = "hidden";
+      sell12.style.visibility = "hidden";
+      sell13.style.visibility = "hidden";
+      sell14.style.visibility = "hidden";
+      sell15.style.visibility = "hidden";
+      sell16.style.visibility = "hidden";
+      sell17.style.visibility = "hidden";
+      sell18.style.visibility = "hidden";
+      sell19.style.visibility = "hidden";
+      sell20.style.visibility = "hidden";
+      sell21.style.visibility = "hidden";
+      sell22.style.visibility = "hidden";
+        
+      }
+      
+      function loser() { 
+        // This is how I get rid of the players that lost the game
+        // Let's first check whose wallet went below the zero a
+        for ( let w = 0; w<players.length; w++) {
+            if (wallets[w] < 0) {
+                            pawns[w].style.visibility = "hidden";
+
+            // Let's get rid of his wallet
+            wallets = wallets.filter(wall => wall != wallets[w]);
+              
+              // Let's get rid of him prom the main function
+            players = players.filter(paya => paya != players[w]);
+            counter = counter.filter(cout => cout != counter[w]);
+              
+              // And of his pawn and the color
+            pawns = pawns.filter(paw => paw != pawns[w]);
+            fills = fills.filter(fill => fill != fills[w]);
+              
+              
+            nowPlayers = nowPlayers.filter(now => now != nowPlayers[w]);
+              console.log(players)    
+                       pawns[i].setAttribute('fill',fills[i]);
+              
+
+              
+              console.log("this is i" + i);
+              walletRefresh();
+          }
+        }
+      }
+      
+     
+ 
+        
+      function doSell1() {
+        // This is a function for selling field 1 (counter[i] = 1
+        // he same is for next 21 fields, so I will explai only this function
+        //After the player sells the field, the field takes back it's original ID number and the color
+        let t = 1;
+        let place = positions[t];
+        ownership[t] = 202;
+        wallets[i] = wallets[i] + sellingPrice[t];
+        bankmoney = bankmoney - sellingPrice[t];
+        document.getElementById(place).setAttribute('fill','#FFEE99');
+        document.getElementById("price").innerHTML = "Sold " + positions[t] + " to bank for " + sellingPrice[t];
+        sell1.style.visibility = "hidden";
+        walletRefresh();
+
+               
+      }      
+      function doSell2() {
+        let t = 3;
+        let place = positions[t];
+        ownership[t] = 204;
+        wallets[i] = wallets[i] + sellingPrice[t];
+        bankmoney = bankmoney - sellingPrice[t];
+        document.getElementById(place).setAttribute('fill','#FFEE99');
+        document.getElementById("price").innerHTML = "Sold " + positions[t] + " to bank for " + sellingPrice[t];
+              sell2.style.visibility = "hidden";
+        walletRefresh();
+
+      }           
+      function doSell3() {
+        let t = 6;
+        let place = positions[t];
+        ownership[t] = 207;
+        wallets[i] = wallets[i] + sellingPrice[t];
+        bankmoney = bankmoney - sellingPrice[t];
+        document.getElementById(place).setAttribute('fill','#FFAA88');
+                 document.getElementById("price").innerHTML = "Sold " + positions[t] + " to bank for " + sellingPrice[t];
+              sell3.style.visibility = "hidden";
+        walletRefresh();
+
+      }      
+      function doSell4() {
+        let t = 7;
+        let place = positions[t];
+        ownership[t] = 208;
+        wallets[i] = wallets[i] + sellingPrice[t];
+        bankmoney = bankmoney - sellingPrice[t];
+        document.getElementById(place).setAttribute('fill','#FFAA88');
+                document.getElementById("price").innerHTML = "Sold " + positions[t] + " to bank for " + sellingPrice[t];
+               sell4.style.visibility = "hidden";
+        walletRefresh();
+
+      }      
+      function doSell5() {
+        let t = 9;
+        let place = positions[t];
+        ownership[t] = 210;
+        wallets[i] = wallets[i] + sellingPrice[t];
+        bankmoney = bankmoney - sellingPrice[t];
+        document.getElementById(place).setAttribute('fill','#FFAA88');
+                document.getElementById("price").innerHTML = "Sold " + positions[t] + " to bank for " + sellingPrice[t];
+               sell5.style.visibility = "hidden";
+        walletRefresh();
+
+      }      
+      function doSell6() {
+        let t = 11;
+        let place = positions[t];
+        ownership[t] = 212;
+        wallets[i] = wallets[i] + sellingPrice[t];
+        bankmoney = bankmoney - sellingPrice[t];
+        document.getElementById(place).setAttribute('fill','#33FF99');
+                 document.getElementById("price").innerHTML = "Sold " + positions[t] + " to bank for " + sellingPrice[t];
+              sell6.style.visibility = "hidden";
+        walletRefresh();
+
+      }      
+      function doSell7() {
+        let t = 12;
+        let place = positions[t];
+        ownership[t] = 213;
+        wallets[i] = wallets[i] + sellingPrice[t];
+        bankmoney = bankmoney - sellingPrice[t];
+        document.getElementById(place).setAttribute('fill','#33FF99');
+                 document.getElementById("price").innerHTML = "Sold " + positions[t] + " to bank for " + sellingPrice[t];
+              sell7.style.visibility = "hidden";
+        walletRefresh();
+
+      }      
+      function doSell8() {
+        let t = 14;
+        let place = positions[t];
+        ownership[t] = 215;
+        wallets[i] = wallets[i] + sellingPrice[t];
+        bankmoney = bankmoney - sellingPrice[t];
+        document.getElementById(place).setAttribute('fill','#33FF99');
+                   document.getElementById("price").innerHTML = "Sold " + positions[t] + " to bank for " + sellingPrice[t];
+            sell8.style.visibility = "hidden";
+        walletRefresh();
+
+      }      
+      function doSell9() {
+        let t = 16;
+        let place = positions[t];
+        ownership[t] = 217;
+        wallets[i] = wallets[i] + sellingPrice[t];
+        bankmoney = bankmoney - sellingPrice[t];
+        document.getElementById(place).setAttribute('fill','#66AA99');
+                   document.getElementById("price").innerHTML = "Sold " + positions[t] + " to bank for " + sellingPrice[t];
+            sell9.style.visibility = "hidden";
+        walletRefresh();
+
+      }      
+      function doSell10() {
+        let t = 17;
+        let place = positions[t];
+        ownership[t] = 218;
+        wallets[i] = wallets[i] + sellingPrice[t];
+        bankmoney = bankmoney - sellingPrice[t];
+        document.getElementById(place).setAttribute('fill','#66AA99');
+                   document.getElementById("price").innerHTML = "Sold " + positions[t] + " to bank for " + sellingPrice[t];
+            sell10.style.visibility = "hidden";
+        walletRefresh();
+
+      }      
+      function doSell11() {
+        let t = 19;
+        let place = positions[t];
+        ownership[t] = 220;
+        wallets[i] = wallets[i] + sellingPrice[t];
+        bankmoney = bankmoney - sellingPrice[t];
+        document.getElementById(place).setAttribute('fill','#66AA99');
+                      document.getElementById("price").innerHTML = "Sold " + positions[t] + " to bank for " + sellingPrice[t];
+         sell11.style.visibility = "hidden";
+        walletRefresh();
+
+      }      
+      function doSell12() {
+        let t = 21;
+        let place = positions[t];
+        ownership[t] = 222;
+        wallets[i] = wallets[i] + sellingPrice[t];
+        bankmoney = bankmoney - sellingPrice[t];
+        document.getElementById(place).setAttribute('fill','#667777');  
+                document.getElementById("price").innerHTML = "Sold " + positions[t] + " to bank for " + sellingPrice[t];
+        sell12.style.visibility = "hidden";
+        walletRefresh();
+
+      }      
+      function doSell13() {
+        let t = 23;
+        let place = positions[t];
+        ownership[t] = 224;
+        wallets[i] = wallets[i] + sellingPrice[t];
+        bankmoney = bankmoney - sellingPrice[t];
+        document.getElementById(place).setAttribute('fill','#667777');    
+                document.getElementById("price").innerHTML = "Sold " + positions[t] + " to bank for " + sellingPrice[t];
+                sell13.style.visibility = "hidden";
+        walletRefresh();
+
+
+      }      
+      function doSell14() {
+        let t = 24;
+        let place = positions[t];
+        ownership[t] = 225;
+        wallets[i] = wallets[i] + sellingPrice[t];
+        bankmoney = bankmoney - sellingPrice[t];
+        document.getElementById(place).setAttribute('fill','#667777');     
+                document.getElementById("price").innerHTML = "Sold " + positions[t] + " to bank for " + sellingPrice[t];
+        sell14.style.visibility = "hidden";
+        walletRefresh();
+
+      }      
+      function doSell15() {
+        let t = 26;
+        let place = positions[t];
+        ownership[t] = 227;
+        wallets[i] = wallets[i] + sellingPrice[t];
+        bankmoney = bankmoney - sellingPrice[t];
+        document.getElementById(place).setAttribute('fill','#337799');  
+                document.getElementById("price").innerHTML = "Sold " + positions[t] + " to bank for " + sellingPrice[t];
+        sell15.style.visibility = "hidden";
+        walletRefresh();
+
+      }      
+      function doSell16() {
+        let t = 28;
+        let place = positions[t];
+        ownership[t] = 229;
+        wallets[i] = wallets[i] + sellingPrice[t];
+        bankmoney = bankmoney - sellingPrice[t];
+        document.getElementById(place).setAttribute('fill','#337799');  
+                document.getElementById("price").innerHTML = "Sold " + positions[t] + " to bank for " + sellingPrice[t];
+        sell16.style.visibility = "hidden";
+        walletRefresh();
+
+      }
+      function doSell17() {
+        let t = 29;
+        let place = positions[t];
+        ownership[t] = 230;
+        wallets[i] = wallets[i] + sellingPrice[t];
+        bankmoney = bankmoney - sellingPrice[t];
+        document.getElementById(place).setAttribute('fill','#337799');
+                document.getElementById("price").innerHTML = "Sold " + positions[t] + " to bank for " + sellingPrice[t];
+        sell17.style.visibility = "hidden";
+        walletRefresh();
+
+      }      
+      function doSell18() {
+        let t = 31;
+        let place = positions[t];
+        ownership[t] = 232;
+        wallets[i] = wallets[i] + sellingPrice[t];
+        bankmoney = bankmoney - sellingPrice[t];
+        document.getElementById(place).setAttribute('fill','#3322AA');
+                document.getElementById("price").innerHTML = "Sold " + positions[t] + " to bank for " + sellingPrice[t];
+        sell18.style.visibility = "hidden";
+        walletRefresh();
+
+      }
+      function doSell19() {
+        let t = 33;
+        let place = positions[t];
+        ownership[t] = 234;
+        wallets[i] = wallets[i] + sellingPrice[t];
+        bankmoney = bankmoney - sellingPrice[t];
+        document.getElementById(place).setAttribute('fill','#3322AA');
+                document.getElementById("price").innerHTML = "Sold " + positions[t] + " to bank for " + sellingPrice[t];
+        sell19.style.visibility = "hidden";
+        walletRefresh();
+
+      }
+      function doSell20() {
+        let t = 34;
+        let place = positions[t];
+        ownership[t] = 235;
+        wallets[i] = wallets[i] + sellingPrice[t];
+        bankmoney = bankmoney - sellingPrice[t];
+        document.getElementById(place).setAttribute('fill','#3322AA');
+                document.getElementById("price").innerHTML = "Sold " + positions[t] + " to bank for " + sellingPrice[t];
+        sell20.style.visibility = "hidden";
+        walletRefresh();
+
+      }
+      function doSell21() {
+        let t = 37;
+        let place = positions[t];
+        ownership[t] = 238;
+        wallets[i] = wallets[i] + sellingPrice[t];
+        bankmoney = bankmoney - sellingPrice[t];
+        document.getElementById(place).setAttribute('fill','#330077');
+                document.getElementById("price").innerHTML = "Sold " + positions[t] + " to bank for " + sellingPrice[t];
+        sell21.style.visibility = "hidden";
+        walletRefresh();
+
+      }
+      function doSell22() {
+        let t = 39;
+        let place = positions[t];
+        ownership[t] = 240;
+        wallets[i] = wallets[i] + sellingPrice[t];
+        bankmoney = bankmoney - sellingPrice[t];
+        document.getElementById(place).setAttribute('fill','#330077');
+                document.getElementById("price").innerHTML = "Sold " + positions[t] + " to bank for " + sellingPrice[t];
+        sell22.style.visibility = "hidden";
+        walletRefresh();
+
+      }
+      
+      // The buttons
+           
+     testBTN.addEventListener("click", plTurn);
+     buttonA.addEventListener("click", onePlayer);
+     buttonB.addEventListener("click", twoPlayers);
+     buttonC.addEventListener("click", threePlayers);
+     buttonD.addEventListener("click", fourPlayers);
+     buttonE.addEventListener("click", fivePlayers);
+     buttonF.addEventListener("click", sixPlayers);
+     startButton.addEventListener("click", start);
+     investButton.addEventListener("click", icoInvest);
+     buyButton.addEventListener("click", buying);
+     nextButton.addEventListener("click", icoNext);     
+      
+           sell1.addEventListener("click", doSell1);
+           sell2.addEventListener("click", doSell2);
+           sell3.addEventListener("click", doSell3);
+           sell4.addEventListener("click", doSell4);
+           sell5.addEventListener("click", doSell5);
+           sell6.addEventListener("click", doSell6);
+           sell7.addEventListener("click", doSell7);
+           sell8.addEventListener("click", doSell8);
+           sell9.addEventListener("click", doSell9);
+           sell10.addEventListener("click", doSell10);
+      
+           sell11.addEventListener("click", doSell11);
+           sell12.addEventListener("click", doSell12);
+           sell13.addEventListener("click", doSell13);
+           sell14.addEventListener("click", doSell14);
+           sell15.addEventListener("click", doSell15);
+           sell16.addEventListener("click", doSell16);
+           sell17.addEventListener("click", doSell17);
+           sell18.addEventListener("click", doSell18);
+           sell19.addEventListener("click", doSell19);
+           sell20.addEventListener("click", doSell20);
+      
+           sell21.addEventListener("click", doSell21);
+           sell22.addEventListener("click", doSell22);
+    
+      </script>
+</html>
